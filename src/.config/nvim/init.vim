@@ -6,7 +6,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-surround'
 
     Plug 'jalvesaq/Nvim-R', { 'for': 'R' }
-    Plug 'lervag/vimtex'
+    "Plug 'lervag/vimtex'
     Plug 'derekwyatt/vim-scala'
     Plug 'OmniSharp/omnisharp-vim'
 
@@ -38,7 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
     "    \ 'do': 'bash install.sh',
     "    \ }
 
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "" General
@@ -128,7 +128,7 @@ call plug#end()
     " "Set background to 'transparent'
     hi Normal guibg=NONE ctermbg=NONE
 
-    if desktopenv == 'ubuntu'
+    if desktopenv == 'KDE'
         set termguicolors
         colorscheme base16-material-darker
     endif
@@ -355,7 +355,7 @@ autocmd FileType vue setlocal shiftwidth=2 tabstop=2
     if !exists('g:ycm_semantic_triggers')
         let g:ycm_semantic_triggers = {}
     endif
-    au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+    "au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 
 
