@@ -5,17 +5,17 @@
 - clean: ['~']
 
 - link:
-    ~/.bashrc: .bashrc
-    ~/.Xresources: .Xresources
-    ~/.Xresources.d: .Xresources.d
-    ~/.scripts: .scripts
-    ~/.config/nvim: .config/nvim
-    ~/.config/bspwm: .config/bspwm
-    ~/.config/sxhkd: .config/sxhkd
-    ~/.config/i3: .config/i3
-    ~/.config/polybar: .config/polybar
-    ~/.config/ranger: .config/ranger
-    ~/.config/zathura: .config/zathura
+    ~/.bashrc: src/.bashrc
+    ~/.Xresources: src/.Xresources
+    ~/.Xresources.d: src/.Xresources.d
+    ~/.scripts: src/.scripts
+    ~/.config/nvim: src/.config/nvim
+    ~/.config/bspwm: src/.config/bspwm
+    ~/.config/sxhkd: src/.config/sxhkd
+    ~/.config/i3: src/.config/i3
+    ~/.config/polybar: src/.config/polybar
+    ~/.config/ranger: src/.config/ranger
+    ~/.config/zathura: src/.config/zathura
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
