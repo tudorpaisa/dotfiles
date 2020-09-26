@@ -1,0 +1,31 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "python.jediEnabled": false,
+  "coc.preferences.enableFloatHighlight": true,
+  "coc.preferences.previewAutoClose": false,
+  "suggest.enablePreview": true,
+  "coc.preferences.formatOnType": true,
+  "coc.source.vimtex.enable": true,
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.js": "prettier",
+  "python.formatting.provider": "yapf",
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "args": ["--background-index"],
+      "rootPatterns": [
+        "compile_flags.txt",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    },
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
+    }
+  }
+}

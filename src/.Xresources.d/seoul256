@@ -1,0 +1,29 @@
+! seoul256 (dark) theme adapted from the URxvt adapation for Xresources
+! append the content of this file to your .Xresources
+
+#define base00 #4e4e4e
+#define base01 #87af87
+#define base02 #ffd787 
+#define base03 #626262
+#define base04 #add4fb
+#define base05 #d0d0d0
+#define base06 #ffafaf
+#define base07 #e4e4e4
+#define base08 #d68787 
+#define base09 #d75f87
+#define base0A #d8af5f
+#define base0B #5f865f
+#define base0C #87afaf
+#define base0D #85add4
+#define base0E #d7afaf
+#define base0F #87d7d7
+
+#define backgr #3a3a3a
+#define foregr #d0d0d0
+
+*foreground: base05 
+*background: base00 
+
+*cursorColor: foregr
+*cursorColor2: backgr
+*colorBD: base07

@@ -1,0 +1,45 @@
+! Base16 Eighties
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #333333
+#define base01 #4d4d4d
+#define base02 #666666
+#define base03 #7e8087
+#define base04 #abacae
+#define base05 #fafafa
+#define base06 #d4d4d4
+#define base07 #95a3ab
+#define base08 #ed5353
+#define base09 #64baff
+#define base0A #ffa154
+#define base0B #8a715e
+#define base0C #ffe16b
+#define base0D #9bdb4d
+#define base0E #cd9ef7
+#define base0F #667885
+
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
+
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07

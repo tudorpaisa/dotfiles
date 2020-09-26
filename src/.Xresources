@@ -1,0 +1,97 @@
+!#include ".Xresources.d/verdandi_darker"
+!#include ".Xresources.d/verdandi_dark"
+#include ".Xresources.d/elementary_dark"
+!#include ".Xresources.d/elementary_light"
+!#include ".Xresources.d/seoul256"
+!#include ".Xresources.d/onedark"
+!#include ".Xresources.d/eighties"
+
+
+!!!---GENERAL---!!!
+Xft.dpi:			180
+Xft.autohint:			0
+Xft.lcdfilter:			lcddefault
+Xft.hintstyle:			hintfull
+Xft.hinting:			1
+Xft.antialias:			1
+Xft.rgba:			rgb
+
+!!!---XTERM---!!!
+XTerm.*.faceName:		Roboto Mono:size=12
+XTerm*internalBorder:		40
+
+XTerm*VT100.translations:	#override \n\
+	Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>V: insert-selection(CLIPBOARD) 
+
+Xterm.*.foreground:		foreground
+Xterm.*.background:		background
+XTerm.*.color0:			base00
+XTerm.*.color1:			base08
+XTerm.*.color2:			base0B
+XTerm.*.color3:			base0A
+XTerm.*.color4:			base0D
+XTerm.*.color5:			base0E
+XTerm.*.color6:			base0C
+XTerm.*.color7:			base05
+XTerm.*.color8:			base03
+XTerm.*.color9:			base09
+XTerm.*.color10:		base01
+XTerm.*.color11:		base02
+XTerm.*.color12:		base04
+XTerm.*.color13:		base06
+XTerm.*.color14:		base0F
+XTerm.*.color15:		base07
+
+!!!---URxvt---!!!
+URxvt.font:                     xft:Roboto Mono:size=12, xft:DejaVu Sans Mono:size=12, xft:Noto Sans Mono:size=12
+URxvt.internalBorder:           40
+
+URxvt.foreground:		base05
+URxvt.background:		base00
+URxvt.color0:			base00
+URxvt.color1:			base08
+URxvt.color2:			base0B
+URxvt.color3:			base0A
+URxvt.color4:			base0D
+URxvt.color5:			base0E
+URxvt.color6:			base0C
+URxvt.color7:			base05
+URxvt.color8:			base03
+URxvt.color9:			base09
+URxvt.color10:	                base01
+URxvt.color11:	                base02
+URxvt.color12:	                base04
+URxvt.color13:	                base06
+URxvt.color14:	                base0F
+URxvt.color15:	                base07
+
+URxvt.scrollBar:                false
+! do not scroll with output
+URxvt*scrollTtyOutput:          false
+! scroll in relation to buffer (with
+!  mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer:         true
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress:        true
+
+!!!---ROFI---!!!
+rofi.color-enabled:		true
+rofi.hide-scrollbar:		true
+rofi.fuzzy:			true
+rofi.font:			Roboto Mono 25
+rofi.lines:			7
+rofi.columns:			1
+rofi.separator-style:		dash
+rofi.line-margin:		10
+rofi.width:			30
+rofi.padding:                   75
+rofi.eh:			1
+
+!			bg	border	separator
+rofi.color-window:	base00,	base04,	base04
+
+!			bg	fg	bg-alt	hl-bg	hl-fg
+rofi.color-normal:	base00,	base04,	base00,	base00,	base06
+rofi.color-active:	base00,	base04,	base00,	base00,	base06
+rofi.color-urgent:	base00,	base08,	base05,	base00,	base06

@@ -1,0 +1,203 @@
+[colors]
+bg = ${xrdb:color0:#000000}
+fg = ${xrdb:color7:#FFFFFF}
+ug = ${xrdb:color1:#FF0000}
+al = ${xrdb:color3:#FF00FF}
+
+col1 = ${xrdb:color11:$FFFFFF}
+col2 = ${xrdb:color8:$FFFFFF}
+col3 = ${xrdb:color7:$FFFFFF}
+
+[bar/bar]
+;monitor = eDP-1
+width = 100%
+height = 60
+dpi = 192
+fixed-center = false
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+;monitor-strict = true
+
+;override-direct = true
+;override-redirect = true
+wm-restack = i3
+
+bottom = true
+
+line-size = 3
+border-size = 0
+
+padding-left = 0
+padding-right = 0
+
+module-margin = 2
+
+font-0 = Roboto Mono:style=Regular:size=9;3*/
+font-1 = RobotoMono Nerd Font:style=regular:size=16;6*/
+;font-0 = fixed:pixelsize=10;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+
+tray-position = none
+tray-detached = true
+tray-maxsize = 1
+tray-padding = 2
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+modules-left = i3
+modules-center = 
+modules-right = filesystem wlan pulseaudio battery date
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+enable-click = false
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = ${colors.fg}
+label-mode-background = ${colors.bg}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-foreground = ${colors.bg}
+label-focused-background = ${colors.fg}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-padding = 2
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-foreground = ${colors.bg}
+label-urgent-background = ${colors.ug}
+label-urgent-padding = 2
+
+[module/filesystem]
+type = internal/fs
+interval = 60
+
+mount-0 = /
+
+label-mounted =  %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.fg}
+fixed-values = true
+
+[module/wlan]
+type = internal/network
+interface = wlp2s0
+interval = 10.0
+
+format-connected = <ramp-signal>
+format-disconnected = <label-disconnected>
+format-packetloss = <animation-packetloss>
+
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+
+ramp-signal-0-foreground = ${colors.col1} 
+ramp-signal-1-foreground = ${colors.col2} 
+ramp-signal-2-foreground = ${colors.col3} 
+
+label-disconnected = ""
+label-disconnected-foreground = ${colors.al}
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = ${colors.ug}
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${colors.fg}
+animation-packetloss-framerate = 1500
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+use-ui-max = false
+interval = 10
+
+format-volume = <ramp-volume>
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-volume-0-foreground = ${colors.col1}
+ramp-volume-1-foreground = ${colors.col2}
+ramp-volume-2-foreground = ${colors.col3}
+
+label-muted = 
+label-muted-foreground = ${colors.col1}
+
+[module/battery]
+type = internal/battery
+
+full-at = 97
+battery = BAT0
+adapter = AC0
+
+poll-interval = 30
+time-format = %H:%M
+
+format-charging = <animation-charging>
+format-charging-foreground = ${colors.fg}
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <label-full>
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 1500
+
+label-discharging = %percentage%% %time%
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+label-full = 
+
+[module/date]
+type = internal/date
+
+interval = 1.0
+
+date = 
+date-alt = " %Y-%m-%d"
+time = %H:%M
+time-alt = %H:%M:%S
+
+format = <label>
+format-background = ${colors.fg}
+format-foreground = ${colors.bg}
+
+label = %time%%date%
+label-padding = 2
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

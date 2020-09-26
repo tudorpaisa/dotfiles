@@ -1,0 +1,36 @@
+_rofi(){
+    rofi -dmenu -location 3 -width -52
+}
+
+# Test whether we have xclip or xsel
+_xclip=$(command -v xclip)
+_xsel=$(command -v xsel)
+
+# Check if we have a clipboard
+if [[ ${_xclip} == *"xclip"* ]]; then
+    clipman="${_xclip} -sel clip"
+elif [[ ${_xsel} ==  *"xsel"* ]]; then
+    clipman="${_xsel} -ib"
+else
+    clipman=""
+fi
+
+# Select a cheatsheet
+rofiout=$(ls ~/.cheat | _rofi)
+
+# If a cheatsheet was NOT chosen
+if [[ -z "$rofiout" ]]; then
+    exit
+else
+    # If we have clipboard
+    if [[ ${clipman} != "" ]]; then
+        # Select a command
+        # Also pipe selection to clipboard
+        #  assuming we make a selection
+        cheat ${rofiout} | _rofi | ${clipman}
+    else
+        # Show commands, but really
+        #  nothing else happens
+        cheat ${rofiout} | _rofi
+    fi
+fi

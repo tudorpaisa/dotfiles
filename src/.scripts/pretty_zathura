@@ -1,0 +1,44 @@
+#!/bin/bash
+
+ZATHURA=$(type zathura)
+
+if [ ZATHURA 2>/dev/null ]
+then
+    cp ~/.scripts/src/zathurarc ~/.config/zathura/zathurarc
+else
+    exit 1
+fi
+
+BASE00=$(xrdb -query | grep color0 | head -1 | cut -d'#' -f2-)
+BASE01=$(xrdb -query | grep color10 | head -1 | cut -d'#' -f2-)
+BASE02=$(xrdb -query | grep color11 | head -1 | cut -d'#' -f2-)
+BASE03=$(xrdb -query | grep color8 | head -1 | cut -d'#' -f2-)
+BASE04=$(xrdb -query | grep color12 | head -1 | cut -d'#' -f2-)
+BASE05=$(xrdb -query | grep color7 | head -1 | cut -d'#' -f2-)
+BASE06=$(xrdb -query | grep color13 | head -1 | cut -d'#' -f2-)
+BASE07=$(xrdb -query | grep color15 | head -1 | cut -d'#' -f2-)
+BASE08=$(xrdb -query | grep color1 | head -1 | cut -d'#' -f2-)
+BASE09=$(xrdb -query | grep color9 | head -1 | cut -d'#' -f2-)
+BASE0A=$(xrdb -query | grep color3 | head -1 | cut -d'#' -f2-)
+BASE0B=$(xrdb -query | grep color2 | head -1 | cut -d'#' -f2-)
+BASE0C=$(xrdb -query | grep color6 | head -1 | cut -d'#' -f2-)
+BASE0D=$(xrdb -query | grep color4 | head -1 | cut -d'#' -f2-)
+BASE0E=$(xrdb -query | grep color5 | head -1 | cut -d'#' -f2-)
+BASE0F=$(xrdb -query | grep color14 | head -1 | cut -d'#' -f2-)
+
+sed -i -e "s/BASE00/$BASE00/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE01/$BASE01/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE02/$BASE02/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE03/$BASE03/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE04/$BASE04/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE05/$BASE05/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE06/$BASE06/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE07/$BASE07/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE08/$BASE08/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE09/$BASE09/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE0A/$BASE0A/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE0B/$BASE0B/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE0C/$BASE0C/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE0D/$BASE0D/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE0E/$BASE0E/g" ~/.config/zathura/zathurarc
+sed -i -e "s/BASE0F/$BASE0F/g" ~/.config/zathura/zathurarc

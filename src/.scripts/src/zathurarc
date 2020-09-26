@@ -1,0 +1,35 @@
+# One page per row by default
+set pages-per-row 1
+
+set default-bg "#BASE00"
+set default-fg "#BASE05"
+
+set statusbar-fg "#BASE05"
+set statusbar-bg "#BASE02"
+
+set inputbar-bg "#BASE01"
+set inputbar-fg "#BASE05"
+
+set notification-error-bg "#BASE08"
+set notification-error-fg "#BASE05"
+
+set notification-warning-bg "#BASE0C"
+set notification-warning-fg "#BASE05"
+
+set highlight-color "#BASE01"
+set highlight-active-color "#BASE09"
+
+set completion-highlight-fg "#BASE00"
+set completion-highlight-bg "#BASE0A"
+
+set completion-bg "#BASE0D"
+set completion-fg "#BASE00"
+
+set notification-bg "#BASE05"
+set notification-fg "#BASE00"
+
+set recolor "true"
+set recolor-lightcolor "#BASE00"
+set recolor-darkcolor "#BASE05"
+
+set selection-clipboard clipboard
