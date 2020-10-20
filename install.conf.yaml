@@ -12,6 +12,7 @@
     ~/.config/sxhkd: src/.config/sxhkd
     ~/.config/i3: src/.config/i3
     ~/.config/polybar: src/.config/polybar
+    ~/.config/powerline: src/.config/powerline
     ~/.config/zathura: src/.config/zathura
 
 - shell:

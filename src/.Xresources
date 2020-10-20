@@ -1,6 +1,6 @@
 !#include ".Xresources.d/verdandi_darker"
-!#include ".Xresources.d/verdandi_dark"
-#include ".Xresources.d/elementary_dark"
+#include ".Xresources.d/verdandi_dark"
+!#include ".Xresources.d/elementary_dark"
 !#include ".Xresources.d/elementary_light"
 !#include ".Xresources.d/seoul256"
 !#include ".Xresources.d/onedark"
@@ -8,7 +8,7 @@
 
 
 !!!---GENERAL---!!!
-Xft.dpi:			180
+!Xft.dpi:			180
 Xft.autohint:			0
 Xft.lcdfilter:			lcddefault
 Xft.hintstyle:			hintfull

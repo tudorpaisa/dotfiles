@@ -20,6 +20,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'google/vim-codefmt'
     Plug 'google/vim-glaive'
 
+    Plug 'leafgarland/typescript-vim'
+    Plug 'peitalin/vim-jsx-typescript'
+
     "Plug 'w0rp/ale'
 
     Plug 'majutsushi/tagbar'
@@ -130,7 +133,7 @@ call plug#end()
 
     if desktopenv == 'KDE'
         set termguicolors
-        colorscheme base16-material-darker
+        colorscheme base16-porple
     endif
 
     " "Make the spellchecker more bearable
@@ -181,9 +184,12 @@ call plug#end()
     let g:OmniSharp_server_stdio = 1
 
 "---HTML & Friends---"
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType js setlocal shiftwidth=2 tabstop=2
-autocmd FileType vue setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType js setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType vue setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType ts setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType jsx setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+autocmd FileType tsx setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 "---Python---"
     "let s:python_version = 3

@@ -148,3 +148,12 @@ if [ -f "/usr/bin/clang" ] && [ -f "/usr/bin/clang++" ]; then
     export CC=/usr/bin/clang
     export CXX=/usr/bin/clang++
 fi
+
+# Powerline
+if command -v powerline_daemon &> /dev/null
+then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    . /usr/share/powerline/bindings/bash/powerline.sh
+fi

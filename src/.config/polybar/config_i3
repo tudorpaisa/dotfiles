@@ -11,8 +11,9 @@ col3 = ${xrdb:color7:$FFFFFF}
 [bar/bar]
 ;monitor = eDP-1
 width = 100%
-height = 60
-dpi = 192
+height = 40
+;height = 60
+;dpi = 192
 fixed-center = false
 
 background = ${colors.bg}
@@ -34,8 +35,8 @@ padding-right = 0
 
 module-margin = 2
 
-font-0 = Roboto Mono:style=Regular:size=9;3*/
-font-1 = RobotoMono Nerd Font:style=regular:size=16;6*/
+font-0 = Roboto Mono:style=Regular:size=10;3*/
+font-1 = DejaVu Sans Mono:style=regular:size=12;3*/
 ;font-0 = fixed:pixelsize=10;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 
@@ -90,7 +91,20 @@ interval = 60
 
 mount-0 = /
 
-label-mounted =  %free%
+;label-mounted =  %free%
+format-mounted = <bar-used>
+bar-used-format = %fill%%indicator%%empty%
+bar-used-width = 5
+
+bar-used-gradient = false
+; foreground does not work
+bar-used-foreground-0 = ${colors.fg}
+
+; The fill, indicator and empty icon can be configured like any <label>
+bar-used-fill = ●
+bar-used-indicator = ●
+bar-used-empty = ○
+
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.fg}
 fixed-values = true
@@ -104,20 +118,20 @@ format-connected = <ramp-signal>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss>
 
-ramp-signal-0 = ""
-ramp-signal-1 = ""
-ramp-signal-2 = ""
+ramp-signal-0 = "○"
+ramp-signal-1 = "◉"
+ramp-signal-2 = "●"
 
-ramp-signal-0-foreground = ${colors.col1} 
-ramp-signal-1-foreground = ${colors.col2} 
+ramp-signal-0-foreground = ${colors.col3} 
+ramp-signal-1-foreground = ${colors.col3} 
 ramp-signal-2-foreground = ${colors.col3} 
 
-label-disconnected = ""
+label-disconnected = "●"
 label-disconnected-foreground = ${colors.al}
 
-animation-packetloss-0 = 
+animation-packetloss-0 = ○
 animation-packetloss-0-foreground = ${colors.ug}
-animation-packetloss-1 = 
+animation-packetloss-1 = ●
 animation-packetloss-1-foreground = ${colors.fg}
 animation-packetloss-framerate = 1500
 
@@ -129,16 +143,16 @@ use-ui-max = false
 interval = 10
 
 format-volume = <ramp-volume>
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-0 = ●○○
+ramp-volume-1 = ●●○
+ramp-volume-2 = ●●●
 
-ramp-volume-0-foreground = ${colors.col1}
-ramp-volume-1-foreground = ${colors.col2}
+ramp-volume-0-foreground = ${colors.col3}
+ramp-volume-1-foreground = ${colors.col3}
 ramp-volume-2-foreground = ${colors.col3}
 
-label-muted = 
-label-muted-foreground = ${colors.col1}
+label-muted = ○○○
+label-muted-foreground = ${colors.col3}
 
 [module/battery]
 type = internal/battery
@@ -155,21 +169,21 @@ format-charging-foreground = ${colors.fg}
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <label-full>
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-0 = ●○○○○
+animation-charging-1 = ●●○○○
+animation-charging-2 = ●●●○○
+animation-charging-3 = ●●●●○
+animation-charging-4 = ●●●●●
 animation-charging-framerate = 1500
 
 label-discharging = %percentage%% %time%
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = ●○○○○
+ramp-capacity-1 = ●●○○○
+ramp-capacity-2 = ●●●○○
+ramp-capacity-3 = ●●●●○
+ramp-capacity-4 = ●●●●●
 
-label-full = 
+label-full = ●●●●●
 
 [module/date]
 type = internal/date
