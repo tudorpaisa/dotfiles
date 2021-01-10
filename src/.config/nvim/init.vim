@@ -6,7 +6,6 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-surround'
 
     Plug 'jalvesaq/Nvim-R', { 'for': 'R' }
-    "Plug 'lervag/vimtex'
     Plug 'derekwyatt/vim-scala'
     Plug 'OmniSharp/omnisharp-vim'
 
@@ -23,12 +22,14 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'leafgarland/typescript-vim'
     Plug 'peitalin/vim-jsx-typescript'
 
-    "Plug 'w0rp/ale'
-
     Plug 'majutsushi/tagbar'
 
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+
+    "Plug 'lervag/vimtex'
+
+    "Plug 'w0rp/ale'
 
     "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
     
@@ -177,7 +178,7 @@ call plug#end()
 """---FILE TYPES---"""
 
 "---C++---"
-    autocmd FileType cpp nnoremap <leader>m :exec '!clang++' shellescape(@%, 1)<CR> :exec '!./a.out' <CR>
+    "autocmd FileType cpp nnoremap <leader>m :exec '!clang++' shellescape(@%, 1)<CR> :exec '!./a.out' <CR>
 
 "---C#---"
     "let g:OmniSharp_serve_use_mono = 1

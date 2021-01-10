@@ -67,23 +67,23 @@ label-monitor = %name%
 label-focused = "●"
 label-focused-foreground = ${colors.fg}
 label-focused-background = ${colors.bg}
-label-focused-padding = 2
+label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-empty = 
-label-empty-padding = 2
+label-empty-padding = 1
 
 ; visible = Active workspace on unfocused monitor
 ;label-occupied = %index%
 label-occupied = "○"
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 ; urgent = Workspace with urgency hint set
 ;label-urgent = %index%
 label-urgent = "●"
 label-urgent-foreground = ${colors.bg}
 label-urgent-background = ${colors.ug}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
 [module/filesystem]
 type = internal/fs

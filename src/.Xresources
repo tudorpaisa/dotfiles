@@ -1,10 +1,13 @@
 !#include ".Xresources.d/verdandi_darker"
-#include ".Xresources.d/verdandi_dark"
+!#include ".Xresources.d/verdandi_dark"
 !#include ".Xresources.d/elementary_dark"
 !#include ".Xresources.d/elementary_light"
 !#include ".Xresources.d/seoul256"
 !#include ".Xresources.d/onedark"
 !#include ".Xresources.d/eighties"
+#include ".Xresources.d/rebecca"
+!#include ".Xresources.d/gruvbox_dark_soft"
+!#include ".Xresources.d/outrun_dark"
 
 
 !!!---GENERAL---!!!
@@ -79,7 +82,7 @@ URxvt*scrollTtyKeypress:        true
 rofi.color-enabled:		true
 rofi.hide-scrollbar:		true
 rofi.fuzzy:			true
-rofi.font:			Roboto Mono 25
+rofi.font:			Roboto Mono 16
 rofi.lines:			7
 rofi.columns:			1
 rofi.separator-style:		dash

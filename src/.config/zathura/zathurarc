@@ -1,35 +1,35 @@
 # One page per row by default
 set pages-per-row 1
 
-set default-bg "#0f1216"
-set default-fg "#b5bbc0"
+set default-bg "#00002a"
+set default-fg "#d0d0fa"
 
-set statusbar-fg "#b5bbc0"
-set statusbar-bg "#4a535c"
+set statusbar-fg "#d0d0fa"
+set statusbar-bg "#30305a"
 
-set inputbar-bg "#39414a"
-set inputbar-fg "#b5bbc0"
+set inputbar-bg "#20204a"
+set inputbar-fg "#d0d0fa"
 
-set notification-error-bg "#39414a"
-set notification-error-fg "#b5bbc0"
+set notification-error-bg "#ff4242"
+set notification-error-fg "#d0d0fa"
 
-set notification-warning-bg "#9d9ca3"
-set notification-warning-fg "#b5bbc0"
+set notification-warning-bg "#0ef0f0"
+set notification-warning-fg "#d0d0fa"
 
-set highlight-color "#39414a"
-set highlight-active-color "#d8dce0"
+set highlight-color "#20204a"
+set highlight-active-color "#fc8d28"
 
-set completion-highlight-fg "#0f1216"
-set completion-highlight-bg "#949ca3"
+set completion-highlight-fg "#00002a"
+set completion-highlight-bg "#f3e877"
 
-set completion-bg "#d8dce0"
-set completion-fg "#0f1216"
+set completion-bg "#66b0ff"
+set completion-fg "#00002a"
 
-set notification-bg "#b5bbc0"
-set notification-fg "#0f1216"
+set notification-bg "#d0d0fa"
+set notification-fg "#00002a"
 
 set recolor "true"
-set recolor-lightcolor "#0f1216"
-set recolor-darkcolor "#b5bbc0"
+set recolor-lightcolor "#00002a"
+set recolor-darkcolor "#d0d0fa"
 
 set selection-clipboard clipboard
