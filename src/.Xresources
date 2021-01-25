@@ -48,7 +48,7 @@ XTerm.*.color15:		base07
 
 !!!---URxvt---!!!
 URxvt.font:                     xft:Roboto Mono:size=12, xft:DejaVu Sans Mono:size=12, xft:Noto Sans Mono:size=12
-URxvt.internalBorder:           40
+URxvt.internalBorder:           20
 
 URxvt.foreground:		base05
 URxvt.background:		base00

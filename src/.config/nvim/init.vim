@@ -195,9 +195,9 @@ autocmd FileType tsx setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "---Python---"
     "let s:python_version = 3
     "autocmd filetype python set omnifunc=python3complete#Complete
-    let g:python3_host_prog = '/usr/bin/python'
+    let g:python3_host_prog = '/usr/bin/python3'
 
-    autocmd FileType python nnoremap <buffer> <F6> :exec '!python' shellescape(@%, 1)<cr>
+    autocmd FileType python nnoremap <buffer> <F6> :exec '!python3' shellescape(@%, 1)<cr>
 
 "--SCALA--"
     " Set filetype for scala

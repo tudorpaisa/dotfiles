@@ -101,7 +101,7 @@ bar-used-gradient = false
 bar-used-foreground-0 = ${colors.fg}
 
 ; The fill, indicator and empty icon can be configured like any <label>
-bar-used-fill = -
+bar-used-fill = ●
 bar-used-indicator = ●
 bar-used-empty = ○
 
