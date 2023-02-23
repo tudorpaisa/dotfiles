@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Tudor Paisa"
-      user-mail-address "tudor.paisa@gmail.com")
+      user-mail-address "tudor.paisa@friss.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -31,11 +31,13 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/org")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
+
+(setq lsp-pyright-multi-root nil)
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -55,6 +57,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
+(use-package! nyan-mode)
+(nyan-mode)
+
 ;; PYTHON CONFIG
 (use-package! python-black
   :demand t
@@ -65,21 +71,24 @@
   (map! :leader :desc "Blacken Buffer" "m b b" #'python-black-buffer)
   (map! :leader :desc "Blacken Region" "m b r" #'python-black-region)
   (map! :leader :desc "Blacken Statement" "m b s" #'python-black-statement)
+  (setq! python-black-extra-args '("--line-length" "90"))
 )
 
-;; RUST CONFIG
-;; (setq lsp-rust-server `rust-analyzer)
+(use-package! pyvenv
+  :ensure t
+  :init
+  (setenv "WORKON_HOME" "~/.pyenv/versions")
+)
 
-;; SHELL
+(setq projectile-project-search-path '(("~/projects/" . 3), "~/cruft"))
 
-;; PROJECTILE
-(setq projectile-project-search-path `(("~/projects" . 3), "~/cruft"))
+(defun projectile-pyenv-mode-set ()
+  "Set pyenv version matching project name."
+  (let ((project (projectile-project-name)))
+    (pyvenv-workon project)
+    (if (file-directory-p pyvenv-virtual-env)
+        pyvenv-virtual-env
+        (pyvenv-deactivate)
+)))
 
-;; (with-eval-after-load `lsp-mode
-;;   (add-to-list `lsp-language-id-configuration `(d-mode . "d"))
-
-;;   (lsp-register-client
-;;    (make-lsp-client :new-connection (lsp-stdio-connection "serve-d")
-;;                     :activation-fn (lsp-activate-on "d")
-;;                     :server-id `serve-d))
-;; )
+(add-hook 'projectile-after-switch-project-hook 'projectile-pyenv-mode-set)

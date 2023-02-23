@@ -48,4 +48,8 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
 (package! evil-tutor)
+(package! nyan-mode)
+(package! pyvenv)
+(package! python-black)

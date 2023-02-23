@@ -100,13 +100,44 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# KEY BINDINGS
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+### FUNCTIONS
+
+# Git select
+# Useful for when working in WSL and having to use git in a Windows
+# partition
+function git() {
+  if $(pwd -P | grep -q "^\/mnt\/c\/*"); then
+    git.exe "$@"
+  else
+    command git "$@"
+  fi
+}
+
 ### RUST
-. "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo/" ]; then
+    . "$HOME/.cargo/env"
+fi
 
 ### PATH EXPORTS
-export PATH=$PATH:$HOME/.emacs.d/bin
+export PATH="$PATH:$HOME/.emacs.d/bin"
+export PATH="$PATH:$HOME/.scripts"
 
 ### ALIASES
 alias vim="nvim"
 alias v="nvim"
-alias v="nvim"
+
+alias proj='cd $HOME/projects'
+
+### NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+### PYENV
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
