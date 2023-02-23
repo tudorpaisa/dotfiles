@@ -132,6 +132,7 @@ call plug#end()
     " "Set background to 'transparent'
     hi Normal guibg=NONE ctermbg=NONE
 
+    set termguicolors
     if desktopenv == 'KDE'
         set termguicolors
         colorscheme base16-porple
