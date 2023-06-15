@@ -53,3 +53,5 @@
 (package! nyan-mode)
 (package! pyvenv)
 (package! python-black)
+(package! parrot)
+(package! fireplace)

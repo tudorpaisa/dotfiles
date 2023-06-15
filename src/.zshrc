@@ -122,9 +122,13 @@ if [ -d "$HOME/.cargo/" ]; then
     . "$HOME/.cargo/env"
 fi
 
+### DOTNET
+export DOTNET_ROOT=$HOME/.dotnet
+
 ### PATH EXPORTS
 export PATH="$PATH:$HOME/.emacs.d/bin"
 export PATH="$PATH:$HOME/.scripts"
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 
 ### ALIASES
 alias vim="nvim"
