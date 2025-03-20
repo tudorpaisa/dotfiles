@@ -37,3 +37,6 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true, notify = false },
 })
+
+require("config.dap")
+require("config.statusbar")
