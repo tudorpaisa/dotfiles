@@ -2,6 +2,16 @@ local langs = require("config.languages")
 local dap = require("dap")
 local ui = require("dapui")
 local dap_virtual_text = require("nvim-dap-virtual-text")
+local async = require("plenary.async")
+
+--
+local input = async.wrap(function(prompt, text, completion, callback)
+    vim.ui.input({
+        prompt = prompt,
+        default = text,
+        completion = completion,
+    }, callback)
+end, 4)
 
 -- Dap Virtual Text
 dap_virtual_text.setup()
@@ -27,6 +37,7 @@ if langs.dotnet ~= nil and langs.dotnet.enabled == true then
         request = "launch",
         program = function()
             return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/', 'file')
+            -- return vim.ui.input({prompt = 'Path to dll', default = vim.fn.getcwd() .. '/', completion = "file"}, function() end)
         end,
         cwd = "${workspaceFolder}"
       },
