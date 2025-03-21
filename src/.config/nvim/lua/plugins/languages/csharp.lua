@@ -34,13 +34,13 @@ return {
             end,
           },
           keys = {
-            {
-              "gd",
-              function()
-                require("omnisharp_extended").telescope_lsp_definitions()
-              end,
-              desc = "Goto Definition",
-            },
+            -- {
+            --   "gd",
+            --   function()
+            --     require("omnisharp_extended").telescope_lsp_definitions()
+            --   end,
+            --   desc = "Goto Definition",
+            -- },
           },
           enable_roslyn_analyzers = true,
           organize_imports_on_format = true,

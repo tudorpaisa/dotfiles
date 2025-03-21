@@ -117,20 +117,6 @@ keymaps = {
     type = "whichkeymap",
   },
   {
-    key = "<leader>cs",
-    fn = "<cmd>Trouble symbols toggle focus=false<cr>",
-    mode = "n",
-    desc = "Symbols (Trouble)",
-    type = "whichkeymap",
-  },
-  {
-    key = "<leader>cl",
-    fn = "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-    mode = "n",
-    desc = "LSP Definitions / references / ... (Trouble)",
-    type = "whichkeymap",
-  },
-  {
     key = "<leader>xL",
     fn = "<cmd>Trouble loclist toggle<cr>",
     mode = "n",
@@ -231,6 +217,67 @@ keymaps = {
     type = "whichkeymap",
   },
 
+  -- code
+  {
+    key = "<leader>c",
+    group = "Code",
+    desc = "Code management",
+    type = "group",
+  },
+  {
+    key = "<leader>cf",
+    fn = "<cmd>FormatBuffer<cr>",
+    desc = "Format Buffer",
+    mode = "n",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>cs",
+    fn = "<cmd>Trouble symbols toggle focus=false<cr>",
+    mode = "n",
+    desc = "Symbols (Trouble)",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>cl",
+    fn = "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+    mode = "n",
+    desc = "LSP Definitions / references / ... (Trouble)",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>ca",
+    fn = vim.lsp.buf.code_action,
+    mode = { "n", "v" },
+    desc = "Code Action",
+    has = "codeAction",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>cc",
+    fn = vim.lsp.codelens.run,
+    mode = { "n", "v" },
+    desc = "Run Codelens",
+    has = "codeLens",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>cC",
+    fn = vim.lsp.codelens.refresh,
+    mode = { "n" },
+    desc = "Refresh & Display Codelens",
+    has = "codeLens",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>cr",
+    fn = vim.lsp.buf.rename,
+    mode = "n",
+    desc = "Rename",
+    has = "rename",
+    type = "whichkeymap",
+  },
+
   -- keymaps
   {
     key = "<ESC>",
@@ -239,11 +286,81 @@ keymaps = {
     desc = "Clear any higlighting",
     type = "keymap",
   },
+  {
+    key = "gd",
+    fn = vim.lsp.buf.definition,
+    mode = "n",
+    desc = "Goto Definition",
+    has = "definition",
+    type = "keymap",
+  },
+  {
+    key = "gr",
+    fn = vim.lsp.buf.references,
+    mode = "n",
+    desc = "references",
+    nowait = true,
+    type = "keymap",
+  },
+  {
+    key = "gI",
+    fn = vim.lsp.buf.implementation,
+    mode = "n",
+    desc = "Goto Implementation",
+    type = "keymap",
+  },
+  {
+    key = "gy",
+    fn = vim.lsp.buf.type_definition,
+    mode = "n",
+    desc = "Goto Type Definition",
+    type = "keymap",
+  },
+  {
+    key = "gD",
+    fn = vim.lsp.buf.declaration,
+    mode = "n",
+    desc = "Goto Declaration",
+    type = "keymap",
+  },
+  {
+    key = "K",
+    fn = function() return vim.lsp.buf.hover() end,
+    mode = "n",
+    desc = "Hover",
+    type = "keymap",
+  },
+  {
+    key = "gK",
+    fn = function() return vim.lsp.buf.signature_help() end,
+    mode = "n",
+    desc = "Signature Help",
+    has = "signatureHelp",
+    type = "keymap",
+  },
+  {
+    key = "<c-k>",
+    fn = function() return vim.lsp.buf.signature_help() end,
+    mode = "i",
+    desc = "Signature Help",
+    has = "signatureHelp",
+    type = "keymap",
+  },
 }
 
 for _, kmap in ipairs(keymaps) do
   if kmap.type == "keymap" then
-    vim.keymap.set(kmap.mode, kmap.key, kmap.fn, { desc = kmap.desc })
+    local opts = { desc = kmap.desc }
+
+    if kmap.has ~= nil then
+      -- opts["has"] = kmap.has
+    end
+
+    if kmap.nowait ~= nil then
+      opts["nowait"] = kmap.nowait
+    end
+
+    vim.keymap.set(kmap.mode, kmap.key, kmap.fn, opts)
   end
 end
 
