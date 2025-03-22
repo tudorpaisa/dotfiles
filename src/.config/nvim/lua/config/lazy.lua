@@ -41,3 +41,4 @@ require("lazy").setup({
 require("config.dap")
 require("config.statusbar")
 require("config.formatting")
+require("config.tabs")

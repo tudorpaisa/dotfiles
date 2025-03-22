@@ -1,0 +1,3 @@
+return {
+  "FotiadisM/tabset.nvim"
+}
