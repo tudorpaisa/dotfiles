@@ -18,6 +18,14 @@ if langs.python ~= nil and langs.python.enabled == true then
   language_formatters["python"] = { langs.python.formatter }
 end
 
+if langs.lua ~= nil and langs.lua.enabled == true then
+  language_formatters["lua"] = { langs.lua.formatter }
+end
+
+if langs.yaml ~= nil and langs.yaml.enabled == true then
+  language_formatters["yaml"] = { langs.yaml.formatter }
+end
+
 -- Setup plugin
 conform = require("conform")
 conform.setup({

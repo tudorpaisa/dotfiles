@@ -38,11 +38,19 @@ return {
         end
       end
 
+      if lang_conf.dotnet ~= nil then
+        if lang_conf.dotnet.enabled == true and lang_conf.dotnet.lsp == "omnisharp" then
           require("lspconfig").omnisharp.setup {
               capabilities = capabilities,
           }
-      if lang_conf.dotnet ~= nil then
-        if lang_conf.dotnet.enabled == true and lang_conf.dotnet.lsp == "omnisharp" then
+        end
+      end
+
+      if lang_conf.lua ~= nil then
+        if lang_conf.lua.enabled == true and lang_conf.lua.lsp == "lua_ls" then
+          require("lspconfig").lua_ls.setup {
+              capabilities = capabilities,
+          }
         end
       end
 
