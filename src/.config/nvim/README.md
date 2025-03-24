@@ -8,4 +8,6 @@
 - [devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - make
 - cmake
+- gcc
 - pwsh (Windows only)
+- bash for windows
