@@ -15,7 +15,7 @@ return {
     enabled = true,
     lsp = "lua_ls",
     linter = "luacheck",
-    formatter = "luaformatter",
+    -- formatter = "luaformatter",
   },
   yaml = {
     enabled = true,
