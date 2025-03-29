@@ -22,4 +22,24 @@ return {
     linter = "yamllint",
     formatter = "yamlfmt",
   },
+  html = {
+    enabled = true,
+    lsp = "html",
+  },
+  css = {
+    enabled = true,
+    lsp = "tailwindcss",
+  },
+  ts = {
+    enabled = true,
+    lsp = "ts_ls",
+    formatter = "prettierd",
+    debugger = "js-debug-adapter",
+  },
+  vue = {
+    enabled = true,
+    lsp = "volar",
+    formatter = "prettierd",
+    debugger = "js-debug-adapter",
+  },
 }

@@ -26,6 +26,10 @@ if langs.yaml ~= nil and langs.yaml.enabled == true then
   language_formatters["yaml"] = { langs.yaml.formatter }
 end
 
+if langs.js ~= nil and langs.js.enabled == true then
+  language_formatters["javascript"] = { langs.yaml.formatter }
+end
+
 -- Setup plugin
 conform = require("conform")
 conform.setup({

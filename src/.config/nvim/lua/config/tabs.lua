@@ -1,9 +1,9 @@
 local langs = require("config.languages")
 local tabset = require("tabset")
 
-settings = {
+local settings = {
   defaults = {
-    tabwidth = 4,
+    tabwidth = 2,
     expandtab = true,
   },
   languages = {
@@ -17,16 +17,9 @@ if langs.dotnet ~= nil and langs.dotnet.enabled == true then
   }
 end
 
-if langs.lua ~= nil and langs.lua.enabled == true then
-  settings.languages["lua"] = {
-    tabwidth = 2,
-    expandtab = true,
-  }
-end
-
-if langs.yaml ~= nil and langs.yaml.enabled == true then
-  settings.languages["yaml"] = {
-    tabwidth = 2,
+if langs.python ~= nil and langs.python.enabled == true then
+  settings.languages["python"] = {
+    tabwidth = 4,
     expandtab = true,
   }
 end
