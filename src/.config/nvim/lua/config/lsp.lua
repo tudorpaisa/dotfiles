@@ -37,6 +37,7 @@ setup_lsp("python", "pyright", { capabilities = capabilities })
 setup_lsp("dotnet", "omnisharp", { capabilities = capabilities })
 setup_lsp("lua", "lua_ls", { capabilities = capabilities })
 setup_lsp("html", "html", { capabilities = capabilities })
+setup_lsp("css", "tailwindcss", { capabilities = capabilities })
 setup_lsp("vue", "volar", {
   capabilities = capabilities,
   init_options = {
