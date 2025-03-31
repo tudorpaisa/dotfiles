@@ -11,14 +11,14 @@ local settings = {
 }
 
 if langs.dotnet ~= nil and langs.dotnet.enabled == true then
-  settings.languages["csharp"] = {
+  settings.languages.cs = {
     tabwidth = 4,
     expandtab = true,
   }
 end
 
 if langs.python ~= nil and langs.python.enabled == true then
-  settings.languages["python"] = {
+  settings.languages.python = {
     tabwidth = 4,
     expandtab = true,
   }
