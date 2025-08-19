@@ -25,7 +25,10 @@ end
 
 local function setup_lsp(language, lsp, lsp_config)
   if lsp_is_enabled(language, lsp) then
-    require("lspconfig")[lsp].setup(lsp_config)
+    vim.lsp.config(lsp, lsp_config)
+    vim.lsp.enable(lsp)
+    -- This is deprecated
+    -- require("lspconfig")[lsp].setup(lsp_config)
   end
 end
 
@@ -39,7 +42,7 @@ setup_lsp("clang", "clangd", { capabilities = capabilities })
 setup_lsp("lua", "lua_ls", { capabilities = capabilities })
 setup_lsp("html", "html", { capabilities = capabilities })
 setup_lsp("css", "tailwindcss", { capabilities = capabilities })
-setup_lsp("vue", "volar", {
+setup_lsp("vue", "vue_ls", {
   capabilities = capabilities,
   init_options = {
     vue = {

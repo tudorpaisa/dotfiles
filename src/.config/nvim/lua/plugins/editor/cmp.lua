@@ -1,8 +1,8 @@
 local jsregexp_command = "make install_jsregexp"
 
-if vim.fn.has("win32") then
-  jsregexp_command = "make install_jsregexp CC=gcc.exe SHELL=C:/Windows/system32/bash.exe .SHELLFLAGS=-c"
-end
+ if vim.fn.has"win32" == 1 then
+   jsregexp_command = "make install_jsregexp CC=gcc.exe SHELL=C:/Windows/system32/bash.exe .SHELLFLAGS=-c"
+ end
 
 return {
   "hrsh7th/nvim-cmp",

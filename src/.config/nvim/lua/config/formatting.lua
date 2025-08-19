@@ -9,7 +9,7 @@ local formatters = {
 if langs.dotnet ~= nil and langs.dotnet.enabled == true then
   language_formatters["cs"] = { langs.dotnet.formatter }
   formatters["csharpier"] = {
-    command = "dotnet-csharpier",
+    command = "csharpier",
     args = { "--write-stdout" },
   }
 end
