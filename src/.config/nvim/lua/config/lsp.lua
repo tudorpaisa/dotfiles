@@ -35,6 +35,7 @@ mason_lspconfig.setup {
 
 setup_lsp("python", "pyright", { capabilities = capabilities })
 setup_lsp("dotnet", "omnisharp", { capabilities = capabilities })
+setup_lsp("clang", "clangd", { capabilities = capabilities })
 setup_lsp("lua", "lua_ls", { capabilities = capabilities })
 setup_lsp("html", "html", { capabilities = capabilities })
 setup_lsp("css", "tailwindcss", { capabilities = capabilities })
@@ -49,17 +50,16 @@ setup_lsp("vue", "volar", {
 })
 
 
-if lsp_is_enabled("vue", "volar") then
-  local mason_registry = require('mason-registry')
-  local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
-      '/node_modules/@vue/language-server'
+if lsp_is_enabled("vue", "vue_ls") then
+  -- local mason_registry = require('mason-registry')
+  -- local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
   setup_lsp("ts", "ts_ls", {
     capabilities = capabilities,
     init_options = {
       plugins = {
         {
           name = "@vue/typescript-plugin",
-          location = vue_language_server_path,
+          location = vim.fn.expand("$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
           languages = { "javascript", "typescript", "vue" },
         },
       },

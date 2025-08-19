@@ -1,4 +1,10 @@
 return {
+  clang = {
+    enabled = true,
+    lsp = "clangd",
+    formatter = "clang-format",
+    debugger = "codelldb",
+  },
   python = {
     enabled = true,
     lsp = "pyright",
@@ -38,7 +44,7 @@ return {
   },
   vue = {
     enabled = true,
-    lsp = "volar",
+    lsp = "vue_ls",
     formatter = "prettierd",
     debugger = "js-debug-adapter",
   },

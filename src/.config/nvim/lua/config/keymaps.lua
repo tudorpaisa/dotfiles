@@ -28,8 +28,22 @@ keymaps = {
     desc = "Telescope live grep",
     type = "whichkeymap",
   },
+  -- buffers
   {
     key = "<leader>b",
+    group = "buffer",
+    desc = "Buffer",
+    type = "group",
+  },
+  {
+    key = "<leader>bb",
+    fn = "<cmd>b#<cr>",
+    mode = "n",
+    desc = "Previous buffer",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>bl",
     fn = "<cmd>Telescope buffers<cr>",
     mode = "n",
     desc = "Telescope buffers",
