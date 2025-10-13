@@ -27,8 +27,6 @@ local function setup_lsp(language, lsp, lsp_config)
   if lsp_is_enabled(language, lsp) then
     vim.lsp.config(lsp, lsp_config)
     vim.lsp.enable(lsp)
-    -- This is deprecated
-    -- require("lspconfig")[lsp].setup(lsp_config)
   end
 end
 

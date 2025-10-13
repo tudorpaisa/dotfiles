@@ -30,6 +30,7 @@ require("lazy").setup({
     -- import your plugins
     -- { import = "plugins" },
     { import = "plugins.editor" },
+    { import = "plugins.languages" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
