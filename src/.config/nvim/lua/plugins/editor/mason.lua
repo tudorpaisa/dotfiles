@@ -30,6 +30,12 @@ return {
           table.insert(ensure_installed, v.formatter)
         end
 
+        if v.enabled == true and v.formatters ~= nil then
+          for _, val in ipairs(v.formatters) do
+            table.insert(ensure_installed, val)
+          end
+        end
+
         if v.enabled == true and v.debugger ~= nil then
           table.insert(ensure_installed, v.debugger)
         end

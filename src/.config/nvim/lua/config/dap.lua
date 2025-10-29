@@ -84,7 +84,7 @@ if langs.clang ~= nil and langs.clang.enabled == true then
 end
 
 -- Typescript
-if langs.dotnet ~= nil and langs.dotnet.enabled == true then
+if langs.ts ~= nil and langs.ts.enabled == true then
   local dap = require("dap")
   if not dap.adapters["pwa-node"] then
     require("dap").adapters["pwa-node"] = {

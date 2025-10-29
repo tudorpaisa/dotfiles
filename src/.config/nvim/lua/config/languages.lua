@@ -48,4 +48,11 @@ return {
     formatter = "prettierd",
     debugger = "js-debug-adapter",
   },
+  go = {
+    enabled = true,
+    lsp = "gopls",
+    formatters = { "goimports", "gofumpt" },
+    linter = "golangci-lint",
+    debugger = "delve",
+  },
 }
