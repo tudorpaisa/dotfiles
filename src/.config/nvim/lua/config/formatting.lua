@@ -31,7 +31,11 @@ if langs.js ~= nil and langs.js.enabled == true then
 end
 
 if langs.go ~= nil and langs.go.enabled == true then
-  language_formatters["go"] = langs.yaml.formatters
+  language_formatters["go"] = langs.go.formatters
+end
+
+if langs.java ~= nil and langs.java.enabled == true then
+  language_formatters["java"] = langs.java.formatters
 end
 
 -- Setup plugin

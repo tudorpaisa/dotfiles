@@ -47,6 +47,19 @@ if langs.dotnet ~= nil and langs.dotnet.enabled == true then
 
 end
 
+-- Java
+if langs.dotnet ~= nil and langs.dotnet.enabled == true then
+  require("dap").configurations.java = {
+    {
+      type = "java",
+      request = "attach",
+      name = "Debug (Attach) - Remote",
+      hostName = "127.0.0.1",
+      port = 5005,
+    },
+  }
+end
+
 -- Clang
 if langs.clang ~= nil and langs.clang.enabled == true then
   require("dap").adapters["codelldb"] = {

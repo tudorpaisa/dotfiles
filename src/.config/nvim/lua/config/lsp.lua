@@ -41,6 +41,8 @@ setup_lsp("lua", "lua_ls", { capabilities = capabilities })
 setup_lsp("html", "html", { capabilities = capabilities })
 setup_lsp("css", "tailwindcss", { capabilities = capabilities })
 setup_lsp("go", "gopls", { capabilities = capabilities })
+setup_lsp("java", "jdtls", { capabilities = capabilities })
+
 setup_lsp("vue", "vue_ls", {
   capabilities = capabilities,
   init_options = {

@@ -55,4 +55,9 @@ return {
     linter = "golangci-lint",
     debugger = "delve",
   },
+  java = {
+    enabled = true,
+    lsp = "jdtls",
+    debuggers = { "java-test", "java-debug-adapter" },
+  },
 }

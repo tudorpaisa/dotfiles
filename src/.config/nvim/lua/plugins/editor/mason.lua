@@ -39,6 +39,12 @@ return {
         if v.enabled == true and v.debugger ~= nil then
           table.insert(ensure_installed, v.debugger)
         end
+
+        if v.enabled == true and v.debuggers ~= nil then
+          for _, val in ipairs(v.debuggers) do
+            table.insert(ensure_installed, val)
+          end
+        end
       end
 
       require("mason-tool-installer").setup({

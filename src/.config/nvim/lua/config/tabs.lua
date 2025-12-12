@@ -24,4 +24,11 @@ if langs.python ~= nil and langs.python.enabled == true then
   }
 end
 
+if langs.java ~= nil and langs.java.enabled == true then
+  settings.languages.java = {
+    tabwidth = 4,
+    expandtab = true,
+  }
+end
+
 tabset.setup(settings)
