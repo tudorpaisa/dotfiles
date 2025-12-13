@@ -88,13 +88,9 @@ return {
       local bundles = {} ---@type string[]
 
       local mason_registry = require("mason-registry")
-      if opts.dap and mason_registry.is_installed("java-debug-adapter") then
-        bundles = vim.fn.glob("$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin-*jar", false, true)
-        -- java-test also depends on java-debug-adapter.
-        if opts.test and mason_registry.is_installed("java-test") then
-          vim.list_extend(bundles, vim.fn.glob("$MASON/share/java-test/*.jar", false, true))
-        end
-      end
+      bundles = vim.fn.glob("$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin-*jar", false, true)
+      -- java-test also depends on java-debug-adapter.
+      vim.list_extend(bundles, vim.fn.glob("$MASON/share/java-test/*.jar", false, true))
 
       local function attach_jdtls()
         local fname = vim.api.nvim_buf_get_name(0)
