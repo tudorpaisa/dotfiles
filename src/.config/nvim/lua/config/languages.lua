@@ -13,9 +13,9 @@ return {
   },
   dotnet = {
     enabled = true,
-    lsp = "omnisharp",
-    formatter = "csharpier",
-    debugger = "netcoredbg",
+    -- lsp = "omnisharp",
+    -- formatter = "csharpier",
+    -- debugger = "netcoredbg",
   },
   lua = {
     enabled = true,

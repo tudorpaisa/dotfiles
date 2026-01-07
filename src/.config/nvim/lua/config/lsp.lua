@@ -35,7 +35,6 @@ mason_lspconfig.setup {
 }
 
 setup_lsp("python", "pyright", { capabilities = capabilities })
-setup_lsp("dotnet", "omnisharp", { capabilities = capabilities })
 setup_lsp("clang", "clangd", { capabilities = capabilities })
 setup_lsp("lua", "lua_ls", { capabilities = capabilities })
 setup_lsp("html", "html", { capabilities = capabilities })

@@ -18,35 +18,6 @@ dap_virtual_text.setup()
 
 -- Configurations
 
--- C#
-if langs.dotnet ~= nil and langs.dotnet.enabled == true then
-  require("dap").adapters["netcoredbg"] = {
-    type = "executable",
-    command = vim.fn.exepath("netcoredbg"),
-    args = { "--interpreter=vscode" },
-    options = {
-      detached = false,
-    }
-  }
-
-  require("dap-cs").setup()
-  -- for _, lang in ipairs({ "cs", "fsharp", "vb" }) do
-  --   dap.configurations[lang] = {
-  --     {
-  --       type = "netcoredbg",
-  --       name = "Launch - netcoredbg",
-  --       request = "launch",
-  --       program = function()
-  --           return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/', 'file')
-  --           -- return vim.ui.input({prompt = 'Path to dll', default = vim.fn.getcwd() .. '/', completion = "file"}, function() end)
-  --       end,
-  --       cwd = "${workspaceFolder}"
-  --     },
-  --   }
-  -- end
-
-end
-
 -- Java
 if langs.dotnet ~= nil and langs.dotnet.enabled == true then
   require("dap").configurations.java = {
