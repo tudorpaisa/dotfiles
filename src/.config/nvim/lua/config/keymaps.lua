@@ -1,4 +1,5 @@
 keymaps = {
+  -- open
   {
     key = "<leader>o",
     group = "open",
@@ -10,6 +11,27 @@ keymaps = {
     fn = "<cmd>Neotree toggle<cr>",
     mode = "n",
     desc = "Open file browser",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>ol",
+    fn = "<cmd>Lazy<cr>",
+    mode = "n",
+    desc = "Open Lazy",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>om",
+    fn = "<cmd>Mason<cr>",
+    mode = "n",
+    desc = "Open Mason",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>ot",
+    fn = "<cmd>vsplit<cr><cmd>terminal<cr>",
+    mode = "n",
+    desc = "Open Terminal",
     type = "whichkeymap",
   },
 
