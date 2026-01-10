@@ -50,6 +50,7 @@ keymaps = {
     desc = "Telescope live grep",
     type = "whichkeymap",
   },
+
   -- buffers
   {
     key = "<leader>b",
@@ -311,6 +312,49 @@ keymaps = {
     mode = "n",
     desc = "Rename",
     has = "rename",
+    type = "whichkeymap",
+  },
+
+  -- AI
+  {
+    key = "<leader>a",
+    group = "ai",
+    desc = "AI",
+    type = "group",
+  },
+  {
+    key = "<leader>ac",
+    fn = "<cmd>CodeCompanionChat Toggle<cr>",
+    mode = "n",
+    desc = "Open CodeCompanion Chat",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>aa",
+    fn = "<cmd>CodeCompanionActions<cr>",
+    mode = "n",
+    desc = "Open CodeCompanion Actions",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>ae",
+    fn = "<cmd>CodeCompanion /explain<cr>",
+    mode = "v",
+    desc = "Explain Code",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>af",
+    fn = "<cmd>CodeCompanion /fix<cr>",
+    mode = "v",
+    desc = "Fix code",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>at",
+    fn = "<cmd>CodeCompanion /tests<cr>",
+    mode = "v",
+    desc = "Generate unit tests",
     type = "whichkeymap",
   },
 
