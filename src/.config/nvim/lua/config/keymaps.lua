@@ -1,4 +1,4 @@
-keymaps = {
+local keymaps = {
   -- open
   {
     key = "<leader>o",
@@ -355,6 +355,13 @@ keymaps = {
     fn = "<cmd>CodeCompanion /tests<cr>",
     mode = "v",
     desc = "Generate unit tests",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>am",
+    fn = "<cmd>MCPHub<cr>",
+    mode = "n",
+    desc = "Open MCPHub",
     type = "whichkeymap",
   },
 
