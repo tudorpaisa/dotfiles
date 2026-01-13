@@ -41,6 +41,11 @@ if tools["mcphub"] and tools["mcphub"]["enabled"] then
   }
 end
 
+-- Copilot setup
+if tools["copilot"] and tools["copilot"]["enabled"] then
+  table.insert(dependencies, "github/copilot.vim")
+end
+
 
 return {
   {

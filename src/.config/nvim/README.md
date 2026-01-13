@@ -15,4 +15,5 @@
 - TS LS (npm install -g typescript typescript-language-server @vue/typescript-plugin)
 - html (npm i -g vscode-langservers-extracted)
 - css (npm install -g @tailwindcss/language-server)
+- mcp-hub (npm install -g mcp-hub@latest)
 - uv (pip install uv)
