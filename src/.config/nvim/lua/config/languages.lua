@@ -6,7 +6,7 @@ return {
     debugger = "codelldb",
   },
   python = {
-    enabled = true,
+    enabled = false,
     lsp = "pyright",
     linter = "flake8",
     formatter = "black",
