@@ -138,6 +138,70 @@ local keymaps = {
     type = "whichkeymap",
   },
 
+  -- Tests
+  {
+    key = "<leader>t",
+    group = "Tests",
+    desc = "Tests",
+    type = "group",
+  },
+  {
+    key = "<leader>tr",
+    fn = "<cmd>lua require('neotest').run.run()<cr>",
+    mode = "n",
+    desc = "Run Nearest Test",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>tf",
+    fn = "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>",
+    mode = "n",
+    desc = "Run Current File Tests",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>td",
+    fn = "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
+    mode = "n",
+    desc = "Debug Nearest Test",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>ts",
+    fn = "<cmd>lua require('neotest').run.stop()<cr>",
+    mode = "n",
+    desc = "Stop Test",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>ta",
+    fn = "<cmd>lua require('neotest').run.attach()<cr>",
+    mode = "n",
+    desc = "Attach To Nearest Test",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>to",
+    fn = "<cmd>lua require('neotest').output.open()<cr>",
+    mode = "n",
+    desc = "Open Test Output",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>to",
+    fn = "<cmd>lua require('neotest').output_panel.toggle()<cr>",
+    mode = "n",
+    desc = "Toggle Test Output Panel",
+    type = "whichkeymap",
+  },
+  {
+    key = "<leader>tv",
+    fn = "<cmd>lua require('neotest').summary.toggle()<cr>",
+    mode = "n",
+    desc = "Toggle Test Summary",
+    type = "whichkeymap",
+  },
+
   -- Trouble
   {
     key = "<leader>xx",

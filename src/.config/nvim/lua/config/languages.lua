@@ -49,14 +49,14 @@ return {
     debugger = "js-debug-adapter",
   },
   go = {
-    enabled = true,
+    enabled = false,
     lsp = "gopls",
     formatters = { "goimports", "gofumpt" },
     linter = "golangci-lint",
     debugger = "delve",
   },
   java = {
-    enabled = true,
+    enabled = false,
     lsp = "jdtls",
     debuggers = { "java-test", "java-debug-adapter" },
   },
