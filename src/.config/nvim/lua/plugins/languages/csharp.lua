@@ -66,13 +66,18 @@ return {
     end,
   },
   {
+      "Nsidorenco/neotest-vstest",
+  },
+  {
     "nvim-neotest/neotest",
     dependencies = {
       "Nsidorenco/neotest-vstest",
     },
     opts = {
       adapters = {
-        require("neotest-vstest")
+        utils.has("neotest-vstest") and function()
+          return require("neotest-vstest")
+        end
       },
     },
   },
