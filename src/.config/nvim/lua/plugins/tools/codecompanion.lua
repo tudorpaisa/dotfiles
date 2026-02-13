@@ -41,13 +41,41 @@ if tools["mcphub"] and tools["mcphub"]["enabled"] then
   }
 end
 
+local out = { }
+
 -- Copilot setup
 if tools["copilot"] and tools["copilot"]["enabled"] then
   table.insert(dependencies, "github/copilot.vim")
+  table.insert(
+    out,
+    {
+      "github/copilot.vim",
+      config = function ()
+        vim.g.copilot_filetypes = { ["*"] = false, }
+        vim.g.copilot_no_tab_map = true
+
+        -- Toggle suggestions
+        vim.keymap.set(
+          'n',
+          '<leader>ao',
+          function()
+            vim.g.copilot_filetypes = { ["*"] = not vim.g.copilot_filetypes["*"] }
+            vim.g.copilot_no_tab_map = not vim.g.copilot_no_tab_map
+          end,
+          {
+            desc = "Toggle OpenAI suggestions",
+            expr = true,
+            replace_keycodes = false,
+        })
+
+      end
+    }
+  )
 end
 
 
-return {
+table.insert(
+  out,
   {
     "olimorris/codecompanion.nvim",
     version = "^18.0.0",
@@ -74,5 +102,7 @@ return {
         })
       end
     end
-  },
-}
+  }
+)
+
+return out
