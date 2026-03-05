@@ -6,14 +6,6 @@ local formatters = {
   },
 }
 
-if langs.dotnet ~= nil and langs.dotnet.enabled == true then
-  language_formatters["cs"] = { langs.dotnet.formatter }
-  formatters["csharpier"] = {
-    command = "csharpier",
-    args = { "--write-stdout" },
-  }
-end
-
 if langs.python ~= nil and langs.python.enabled == true then
   language_formatters["python"] = { langs.python.formatter }
 end
@@ -28,10 +20,6 @@ end
 
 if langs.js ~= nil and langs.js.enabled == true then
   language_formatters["javascript"] = { langs.yaml.formatter }
-end
-
-if langs.go ~= nil and langs.go.enabled == true then
-  language_formatters["go"] = langs.go.formatters
 end
 
 if langs.java ~= nil and langs.java.enabled == true then

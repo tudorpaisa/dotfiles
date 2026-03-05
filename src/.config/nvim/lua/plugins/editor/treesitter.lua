@@ -34,6 +34,7 @@ return {
         "gitignore",
         "c",
         "cpp",
+        "go",
         "rust",
         "python",
         "c_sharp",

@@ -50,10 +50,10 @@ return {
   },
   go = {
     enabled = false,
-    lsp = "gopls",
-    formatters = { "goimports", "gofumpt" },
-    linter = "golangci-lint",
-    debugger = "delve",
+    -- lsp = "gopls",
+    -- formatters = { "goimports", "gofumpt" },
+    -- linter = "golangci-lint",
+    -- debugger = "delve",
   },
   java = {
     enabled = false,
