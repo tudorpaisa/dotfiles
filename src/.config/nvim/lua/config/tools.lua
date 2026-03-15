@@ -2,7 +2,7 @@ return {
   codecompanion = {
     enabled = true,
     adapter = "copilot",
-    model = "claude-sonnet-4.5",
+    model = "claude-sonnet-4.6",
     -- adapter = "gemini",
     -- model = "gemini-3-flash-preview",
     log_level = "TRACE"
