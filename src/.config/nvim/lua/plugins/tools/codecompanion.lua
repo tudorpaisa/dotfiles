@@ -27,7 +27,7 @@ local default_adapter = {
 }
 
 local dependencies = {
-  "nvim-lua/plenary.nvim",
+  { "nvim-lua/plenary.nvim", branch = "master" },
   "nvim-treesitter/nvim-treesitter",
 }
 local extensions = {}
@@ -101,13 +101,6 @@ table.insert(
           inline = default_adapter,
           cmd = default_adapter,
           background = default_adapter,
-        },
-        strategies = {
-          chat = {
-            opts = {
-              require_approval = false,
-            }
-          }
         },
         opts = {
           log_level = tools["codecompanion"]["log_level"],

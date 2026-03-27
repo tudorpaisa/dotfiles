@@ -17,3 +17,4 @@
 - css (npm install -g @tailwindcss/language-server)
 - mcp-hub (npm install -g mcp-hub@latest)
 - uv (pip install uv)
+- opencode (Linux: `curl -fsSL https://opencode.ai/install | bash` Windows: `npm install -g opencode-ai`)
