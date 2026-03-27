@@ -49,7 +49,7 @@ return {
     debugger = "js-debug-adapter",
   },
   go = {
-    enabled = false,
+    enabled = true,
     -- lsp = "gopls",
     -- formatters = { "goimports", "gofumpt" },
     -- linter = "golangci-lint",

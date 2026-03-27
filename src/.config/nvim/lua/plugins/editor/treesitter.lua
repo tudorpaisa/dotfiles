@@ -8,62 +8,41 @@ return {
   },
   config = function()
     local treesitter = require("nvim-treesitter")
-    if not treesitter.get_installed then
-      print("Please restart Neovim and run `:TSUpdate` to use the `nvim-treesitter` **main** branch.")
-      return
-    end
-
-    treesitter.setup({
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      indent = { enable = true },
-      autotag = {
-        enable = true,
-      },
-      ensure_installed = {
-        "json",
-        "javascript",
-        "typescript",
-        "tsx",
-        "yaml",
+    treesitter.install {
+        "bash",
+        "c",
+        "c_sharp",
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
+        "diff",
         "html",
-        "css",
+        "javascript",
+        "jsdoc",
+        "json",
+        "lua",
+        "luadoc",
+        "luap",
         "markdown",
         "markdown_inline",
-        "bash",
-        "lua",
-        "vim",
-        "dockerfile",
-        "gitignore",
-        "c",
-        "cpp",
-        "go",
-        "rust",
+        "printf",
         "python",
-        "c_sharp",
-        "vue",
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<C-space>",
-          node_incremental = "<C-space>",
-          scope_incremental = false,
-          node_decremental = "<bs>",
-        },
-      },
-      rainbow = {
-        enable = true,
-        disable = { "html" },
-        extended_mode = false,
-        max_file_lines = nil,
-      },
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
+    }
+    treesitter.setup()
+
+    vim.api.nvim_create_autocmd('FileType', {
+      callback = function() vim.treesitter.start() end,
     })
+
   end,
 }
