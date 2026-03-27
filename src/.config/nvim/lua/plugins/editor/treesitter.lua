@@ -1,6 +1,6 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  branch = "master",
+  branch = "main",
   event = { "BufReadPre", "BufNewFile" },
   build = ":TSUpdate",
   dependencies = {
@@ -8,6 +8,10 @@ return {
   },
   config = function()
     local treesitter = require("nvim-treesitter")
+    if not treesitter.get_installed then
+      print("Please restart Neovim and run `:TSUpdate` to use the `nvim-treesitter` **main** branch.")
+      return
+    end
 
     treesitter.setup({
       highlight = {

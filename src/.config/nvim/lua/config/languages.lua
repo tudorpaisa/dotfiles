@@ -20,7 +20,7 @@ return {
   lua = {
     enabled = true,
     lsp = "lua_ls",
-    linter = "luacheck",
+    -- linter = "luacheck",
     -- formatter = "luaformatter",
   },
   yaml = {
