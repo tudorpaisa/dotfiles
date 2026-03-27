@@ -10,6 +10,6 @@ return {
     bundled_build = false, -- Enable when global binary installations aren't possible.
   },
   copilot = {
-    enabled = false,
+    enabled = true,
   }
 }
