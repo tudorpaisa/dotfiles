@@ -1,7 +1,7 @@
 return {
   codecompanion = {
     enabled = true,
-    adapter = "copilot",
+    adapter = "copilot_acp",
     model = "claude-sonnet-4.6",
     log_level = "TRACE"
   },
