@@ -1,8 +1,8 @@
 return {
   codecompanion = {
     enabled = true,
-    adapter = "copilot_acp",
-    model = "claude-sonnet-4.6",
+    adapter = "claude_code",
+    model = "Default (recommended)",
     log_level = "TRACE"
   },
   mcphub = {
@@ -10,6 +10,6 @@ return {
     bundled_build = false, -- Enable when global binary installations aren't possible.
   },
   copilot = {
-    enabled = true,
+    enabled = false,
   }
 }

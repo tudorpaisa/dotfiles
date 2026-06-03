@@ -18,3 +18,4 @@
 - mcp-hub (npm install -g mcp-hub@latest)
 - uv (pip install uv)
 - opencode (Linux: `curl -fsSL https://opencode.ai/install | bash` Windows: `npm install -g opencode-ai`)
+- claude code (Linux: `curl -fsSL https://claude.ai/install.sh | bash` Windows: `irm https://claude.ai/install.ps1 | iex` ACP Integration: `npm i -g @agentclientprotocol/claude-agent-acp`)

@@ -95,6 +95,17 @@ table.insert(
     dependencies = dependencies,
     config = function ()
       require("codecompanion").setup({
+        adapters = {
+          acp = {
+            claude_code = function()
+              return require("codecompanion.adapters").extend("claude_code", {
+                env = {
+                  api_key = "CLAUDE_CODE_TOKEN"
+                }
+              })
+            end,
+          }
+        },
         extensions = extensions,
         interactions = {
           chat = default_adapter,
