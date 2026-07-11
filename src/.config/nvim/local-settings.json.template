@@ -1,0 +1,9 @@
+{
+  "codecompanion": {
+    "enabled": true,
+    "adapter": {
+      "name": "opencode"
+    }
+  }
+}
+

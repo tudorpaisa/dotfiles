@@ -1,3 +1,4 @@
+local local_settings = require("local_settings")
 local tools = require("config.tools")
 
 if not tools["codecompanion"] then
@@ -8,10 +9,25 @@ if not tools["codecompanion"]["enabled"] then
   return {}
 end
 
+if local_settings["codecompanion"]["enabled"] == false then
+  return {}
+end
+
+local adapter_name = tools["codecompanion"]["adapter"]
+local adapter_model = tools["codecompanion"]["model"]
+
+if local_settings["codecompanion"]["adapter"]["name"] then
+  adapter_name = local_settings["codecompanion"]["adapter"]["name"]
+end
+
+if local_settings["codecompanion"]["adapter"]["model"] then
+  adapter_model = local_settings["codecompanion"]["adapter"]["model"]
+end
+
 local default_adapter = {
   adapter = {
-    name = tools["codecompanion"]["adapter"],
-    model = tools["codecompanion"]["model"],
+    name = adapter_name,
+    model = adapter_model,
   },
   tools = {
     read_file = {
